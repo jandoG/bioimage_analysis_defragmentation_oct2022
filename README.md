@@ -1,2 +1,21 @@
-# bioimage_analysis_defragmentation_oct2022
+# Project work (group 1) from Defragmentation Workshop from October 2022
+
+### Analysis Goal
+- Segment 'only' the cytoplasm in images with no nuclei stain. 
+
+### Workflow 
+1. `save_tiff.py`: save the images saved in propietary format into tiff for easy accessibility by other programs. The channels are split and saved separately. Works on a folder of images. 
+2. `cytoplasm_segmentation.ipynb`: 
+    - Read images in folder, randomly pick one for training an Object classifier in napari-devbio package.
+    - Initially training could be done by adding labels in napari window.
+    - Option to also load labels from image file - possibly saved using napari > labels > save as image.
+    - We **train a classifier** to identify cytoplasm region in cells.
+    - The classifier is saved to disk.
+3. `batch_prediction_using_classifier.ipynb`: 
+    - Read images in folder, read classifier model 
+    - Apply to images in the folder in a loop and save label maps of the segmentation.
+    
+### Images 
+- Images used for training: 2D, single channel containing the cytoplasm 
+
  
